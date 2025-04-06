@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dynamic pricing for selling perishable products in a competitive environment</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<style type="text/css">
+			body {
+				font-family: 'Open Sans', sans-serif !important;
+			}
+			
+			.chart {
+ 		 		font-size: 0.5em;
+			}
+
+			.axis path,
+			.chart .axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			.chart .line {
+			  fill: none;
+			  stroke-width: 2px;
+			}
+
+			.tooltip {
+				font-size: 0.5em;
+				background-color: white;
+			}
+
+			#histogram {
+				text-align: center;
+			}
+			
+			#histogram .bars rect {
+			  /*fill: whitesmoke;*/
+			  fill: grey;
+			}
+
+			#histogram .axis text {
+			  font: 10px sans-serif;
+			}
+
+			#histogram .axis path, #histogram .axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			h3, h4 {
+				margin: 2em 0;
+			}
+
+			#selectN {
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: flex-start;
+				align-content: flex-start;
+				height: 300px;
+				overflow-y: scroll;
+			}
+
+			#selectN > div {
+				width: 2em;
+				margin: 0.05em;
+				text-align: center;
+			}
+
+			.glyphicon.spinning {
+			    animation: spin 1s infinite linear;
+			    -webkit-animation: spin2 1s infinite linear;
+			}
+
+			@keyframes spin {
+			    from { transform: scale(1) rotate(0deg); }
+			    to { transform: scale(1) rotate(360deg); }
+			}
+
+			@-webkit-keyframes spin2 {
+			    from { -webkit-transform: rotate(0deg); }
+			    to { -webkit-transform: rotate(360deg); }
+			}
+
+			.userDraw rect {
+			  fill: none;
+			  pointer-events: all;
+			}
+
+			.userDraw circle, .userDraw .line {
+			  fill: none;
+			  stroke: grey;
+			  stroke-width: 1.5px;
+			}
+
+			.userDraw circle {
+			  fill: grey;
+			  fill-opacity: .2;
+			  cursor: move;
+			}
+
+			.userDraw .axis path,
+			.userDraw .axis line {
+			  fill: none;
+			  stroke: #000;
+			  shape-rendering: crispEdges;
+			}
+
+			.userDraw .axis {
+				font-size: 0.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header text-center">
+		  	<h1>Dynamic pricing<br><small>for selling perishable products in a competitive environment</small></h1>
+			</div>
+			<h3 class="text-center">Demand Estimation</h3>
+			<div class="row">
+				<div class="col-md-6 userDraw" id="userDrawGraph">
+					<h4 class="text-center">Time</h4>
+				</div>
+				<div class="col-md-6 userDraw" id="userDrawGraph2">
+					<h4 class="text-center">Rank</h4>
+				</div>
+			</div>
+			<div id="options_form"></div>
+			<div id="diagrams"></div>
+
+			<!-- D3 -->
+			<script src="bower_components/d3/d3.min.js" charset="utf-8"></script>
+			<!-- jQuery -->
+			<script src="bower_components/jquery/dist/jquery.min.js"></script>
+			<!-- Bootstrap JavaScript -->
+			<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+			<!-- React -->
+			<script src="bower_components/react/react.js"></script>
+    	<script src="bower_components/react/react-dom.js"></script>
+    	<script src="bower_components/babel/browser.js"></script>
+			<script type="text/babel" src="options_form.jsx"></script>
+			<script src="drawgraph.js"></script>
+
+			<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	 		<!-- <script src="Hello World"></script> -->
+	 	</div>
+	</body>
+</html>
